@@ -5,6 +5,7 @@ Shared, version-controlled Anki decks for mnemonic cloud trainees. One repo, as 
 | Deck | Notes | What it covers |
 | --- | --- | --- |
 | `SC-500` | 221 | Implementing End-to-End Security Controls for Cloud and AI Workloads (Cloud and AI Security Engineer Associate) |
+| `AZ-305` | 500 | Designing Microsoft Azure Infrastructure Solutions (Azure Solutions Architect Expert) |
 
 `python tools/list_decks.py` prints the current list straight from the registry.
 
