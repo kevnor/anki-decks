@@ -69,3 +69,14 @@ domain = ["identity", "storage-db-network", "compute", "posture"]
 # min_scenario_share = 0.0
 # ---------------------------------------------------------------------------
 
+
+
+[[decks]]
+id = "AZ-305"
+title = "Designing Microsoft Azure Infrastructure Solutions"
+path = "deck/AZ-305"
+maintainer = "Kevin Nordnes"
+reference = "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-305"
+
+[decks.tag_values]
+domain = ["identity-governance-monitoring", "data-storage", "business-continuity", "infrastructure"]
