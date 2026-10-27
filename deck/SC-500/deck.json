@@ -247,9 +247,9 @@
             "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
             "tags": [
                 "domain::compute",
-                "service::defender-cloud",
+                "service::arc",
                 "source::ms-learn",
-                "type::scenario"
+                "type::fact"
             ]
         },
         {
@@ -262,7 +262,7 @@
             "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
             "tags": [
                 "domain::storage-db-network",
-                "service::firewall",
+                "service::nsg",
                 "source::ms-learn",
                 "type::discriminator"
             ]
@@ -285,20 +285,6 @@
         {
             "__type__": "Note",
             "fields": [
-                "What score does SC-500 require to pass?",
-                "700."
-            ],
-            "guid": "HvpyXxDcum",
-            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
-            "tags": [
-                "domain::posture",
-                "source::ms-learn",
-                "type::fact"
-            ]
-        },
-        {
-            "__type__": "Note",
-            "fields": [
                 "A storage account must be reachable only from one VNet subnet. Storage firewall rule or private endpoint?",
                 "Both restrict access, but only the private endpoint gives the account a private IP in the subnet and lets you drop the public endpoint entirely. Firewall rules still allow traffic over the public endpoint."
             ],
@@ -306,7 +292,7 @@
             "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
             "tags": [
                 "domain::storage-db-network",
-                "service::firewall",
+                "service::storage",
                 "source::ms-learn",
                 "type::scenario"
             ]
@@ -330,7 +316,7 @@
             "__type__": "Note",
             "fields": [
                 "Which Defender for Cloud capability scans resources and code for exposed secrets?",
-                "Defender CSPM secret scanning."
+                "Defender CSPM secret scanning — agentless, it finds secrets on VM disks, in code repositories and in cloud deployments."
             ],
             "guid": "NyUQqT#!Qw",
             "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
@@ -345,13 +331,13 @@
             "__type__": "Note",
             "fields": [
                 "A Copilot Studio agent's identity is compromised. Which tool shows what that agent could reach?",
-                "Defender XDR blast radius analysis for Microsoft Entra Agent ID."
+                "Blast radius analysis in the Defender XDR incident graph — it maps paths from the compromised Entra Agent ID to critical assets."
             ],
             "guid": "Ps^j^Gb;I/",
             "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
             "tags": [
                 "domain::compute",
-                "service::defender-cloud",
+                "service::defender-xdr",
                 "source::ms-learn",
                 "type::scenario"
             ]
@@ -366,6 +352,7 @@
             "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
             "tags": [
                 "domain::storage-db-network",
+                "service::network-watcher",
                 "source::ms-learn",
                 "type::fact"
             ]
@@ -469,7 +456,7 @@
             "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
             "tags": [
                 "domain::storage-db-network",
-                "service::firewall",
+                "service::private-link",
                 "source::ms-learn",
                 "type::discriminator"
             ]
@@ -478,7 +465,7 @@
             "__type__": "Note",
             "fields": [
                 "How does Microsoft Sentinel collect Windows Security events from servers?",
-                "Data collection rules (DCR), optionally fed by Windows Event Forwarding for machines that cannot run the agent."
+                "The Azure Monitor Agent with a data collection rule (Windows Security Events via AMA). Machines that can't run the agent forward to a WEC server that does."
             ],
             "guid": "psA^aMUD&6",
             "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
@@ -517,6 +504,3035 @@
                 "service::entra",
                 "source::lab",
                 "type::why"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "An auditor wants proof that every Global Administrator still needs the role. Which PIM feature?",
+                "Access reviews on the role — reviewers confirm or remove each assignment, and denied ones can be removed automatically."
+            ],
+            "guid": "6NY}@@k7b7",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::entra",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Activating an eligible role in PIM can require {{c1::MFA}}, {{c2::a justification}} and {{c3::approval}}.",
+                "Configured per role in the PIM role settings."
+            ],
+            "guid": "*#3j:|5HIK",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000002",
+            "tags": [
+                "domain::identity",
+                "service::entra",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "PIM: which kind of role covers Owner on an Azure subscription, Azure resource roles or Microsoft Entra roles?",
+                "Azure resource roles. Entra roles such as Global Administrator govern the directory, not Azure resources."
+            ],
+            "guid": "<Qy*?d-#zt",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::entra",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Why use PIM for Groups instead of eligible role assignments on each user?",
+                "One eligible group membership can carry several role assignments at once, so you govern one object instead of many."
+            ],
+            "guid": "q@WpDc&k.k",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::entra",
+                "source::ms-learn",
+                "type::why"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What does a Conditional Access policy in report-only mode do?",
+                "It evaluates every sign-in and logs what it <i>would</i> have done, without enforcing anything — so you can measure impact before turning it on."
+            ],
+            "guid": "OdMk<gajx6",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::entra",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Admins must use phishing-resistant MFA, but other users may keep the Authenticator app. Which Conditional Access grant control?",
+                "<b>Require authentication strength</b> set to Phishing-resistant MFA, in a policy scoped to the admin roles."
+            ],
+            "guid": "LHj]97x@[%",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::entra",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Why exclude break-glass (emergency access) accounts from Conditional Access policies?",
+                "A broken policy can lock every admin out of the tenant; those accounts are the way back in. Alert on their sign-ins instead."
+            ],
+            "guid": "Yfw{DFmA/N",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::entra",
+                "source::ms-learn",
+                "type::why"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Entra ID Protection: is a leaked password found on the dark web a sign-in risk or a user risk?",
+                "User risk — the account itself is compromised. Sign-in risk is about one authentication looking suspicious, such as from an anonymous IP."
+            ],
+            "guid": "ajBBKf8`Ka",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::entra",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Sign-ins from countries you don't operate in must be blocked. Which Conditional Access building block do you need?",
+                "A <b>named location</b> of countries/regions used as a condition, with Block as the grant control."
+            ],
+            "guid": "PYY][],JrK",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::entra",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What does Continuous Access Evaluation (CAE) add to Conditional Access?",
+                "Supporting resources revoke tokens in near real time on critical events — user disabled, password reset, location change — instead of waiting for expiry."
+            ],
+            "guid": "6}ggs,Yczs",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::entra",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Every agent identity that Entra ID Protection flags as high risk must be blocked. What do you build?",
+                "A Conditional Access policy targeting <b>All agent identities</b>, with the Agent risk condition set to High and the Block grant control."
+            ],
+            "guid": "BKk$-r@._)",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::entra",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Does a Conditional Access policy that targets All users also cover an agent's user account?",
+                "No. Agent user accounts and agent identities have to be targeted explicitly; user-targeted policies don't include them."
+            ],
+            "guid": "GIn/5lg9Ba",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::entra",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Why shouldn't agent identities rely on your existing \"require MFA for all users\" policy?",
+                "Agents can't complete interactive controls like MFA. They need dedicated policies built on identity filters, agent risk and locations."
+            ],
+            "guid": "j<}F.<O3&V",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::entra",
+                "source::ms-learn",
+                "type::why"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "How can one Conditional Access policy cover every agent created from the same template, including future ones?",
+                "Target the <b>agent identity blueprint</b> — the policy applies to every agent identity derived from it."
+            ],
+            "guid": "hX>>,`7!)_",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::entra",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Conditional Access must apply to hundreds of agent identities by a business label such as Environment=Prod. What do you use?",
+                "Custom security attributes on the agent identities, selected in the policy's agent assignment."
+            ],
+            "guid": "zWy[laZqQ(",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::entra",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "FIDO2 security key or Authenticator push approval: which is phishing-resistant?",
+                "FIDO2 (and passkeys, Windows Hello for Business). The credential is bound to the real site's origin, so a fake sign-in page gets nothing usable. A push approval can be relayed."
+            ],
+            "guid": "SwK1ZfP2g{",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::entra",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Where in Microsoft Entra ID do you control which MFA and passwordless methods users may register?",
+                "The <b>Authentication methods policy</b>."
+            ],
+            "guid": "CRpdfLXu?E",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::entra",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What attack does number matching in Microsoft Authenticator defend against?",
+                "MFA fatigue — the user must type the number shown on the sign-in screen, so blindly approving a stray push no longer works."
+            ],
+            "guid": "P<4[RC_>31",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::entra",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What is a Temporary Access Pass (TAP) for?",
+                "A time-limited passcode that lets a user sign in and register a passwordless method, without ever having a password."
+            ],
+            "guid": "%u)p8WjWeg",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::entra",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "App registration or enterprise application: which is the tenant-local object that holds user assignments and consent grants?",
+                "The enterprise application (service principal). The app registration is the app's global definition in its home tenant."
+            ],
+            "guid": "2)`#_ai0FV",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::entra",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Delegated or application permission: which lets a background daemon read every mailbox with no user signed in?",
+                "Application permission — the app acts as itself and needs admin consent. Delegated permissions are capped by what the signed-in user can do."
+            ],
+            "guid": "M@u@Ax[BGQ",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::entra",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Users keep consenting to unknown apps that read their mail. Which settings stop this but leave a path for legitimate requests?",
+                "Restrict user consent (for example, verified publishers and low-impact permissions only) and turn on the <b>admin consent workflow</b> so users can request approval."
+            ],
+            "guid": "64~npxz$f5",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::entra",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Why doesn't resetting the user's password fix an illicit consent grant?",
+                "The attacker's app holds an OAuth grant and refresh tokens, not the password. You have to revoke the grant or remove the service principal."
+            ],
+            "guid": "<LZx_f@2pL",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::entra",
+                "source::ms-learn",
+                "type::why"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Setting {{c1::Assignment required}} to Yes on an enterprise application means only assigned users and groups can get a token for it.",
+                ""
+            ],
+            "guid": "v;|3>ID?:p",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000002",
+            "tags": [
+                "domain::identity",
+                "service::entra",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "System-assigned or user-assigned managed identity: which survives deletion of the resource it is attached to?",
+                "User-assigned — it is a standalone Azure resource that several resources can share. A system-assigned identity is deleted with its resource."
+            ],
+            "guid": "R.:/U&yv5f",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::entra",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Twenty VMs in a pool need identical Key Vault access. Which managed identity type fits?",
+                "One <b>user-assigned</b> managed identity attached to all of them — grant access once instead of twenty times."
+            ],
+            "guid": "lO0_ne(;(U",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::entra",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Key Vault: Azure RBAC or vault access policies — which lets you grant access to a single secret?",
+                "Azure RBAC — role assignments can be scoped to one key, secret or certificate. Access policies apply to the whole vault."
+            ],
+            "guid": "H?-)~vg1}.",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::keyvault",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Which built-in role lets an app read Key Vault secret values without managing the vault?",
+                "Key Vault Secrets User."
+            ],
+            "guid": "!#x!2&{gD9",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::keyvault",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Why is Key Vault Contributor dangerous on a vault that uses the access-policy model?",
+                "It manages the vault, so it can write itself an access policy that grants data access. Under the Azure RBAC model that escalation path doesn't exist."
+            ],
+            "guid": "=-WY=D2?r`",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::keyvault",
+                "source::ms-learn",
+                "type::why"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Key Vault soft delete or purge protection: which stops even an admin from permanently deleting a vault before retention ends?",
+                "Purge protection. Soft delete makes deleted items recoverable; purge protection blocks a forced purge during retention, and can't be turned off once on."
+            ],
+            "guid": "@#^2AGj&`[",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::keyvault",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Key Vault soft-delete retention can be set from {{c1::7}} to {{c2::90}} days.",
+                ""
+            ],
+            "guid": "p=#&M3E7%h",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000002",
+            "tags": [
+                "domain::identity",
+                "service::keyvault",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "A Key Vault must accept traffic only from one VNet plus Azure services such as Backup. Which settings?",
+                "Key Vault firewall set to selected networks for that VNet, plus <b>Allow trusted Microsoft services to bypass this firewall</b>."
+            ],
+            "guid": "yFZf_OR<$d",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::keyvault",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What does Microsoft Defender for Key Vault detect?",
+                "Unusual access to a vault — for example from a Tor exit node, by an unfamiliar app or user, or a sudden spike in secret reads."
+            ],
+            "guid": "4$`J=.yEyp",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::keyvault",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "TLS certificates stored in Key Vault keep expiring unnoticed. What should you configure on them?",
+                "A certificate <b>lifetime action</b>: auto-renew through an integrated CA, or email contacts at a set point before expiry."
+            ],
+            "guid": "G;~QFM4|Ok",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::keyvault",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Key Vault Premium or Managed HSM: which gives you a single-tenant HSM pool where you hold the security domain?",
+                "Managed HSM. Key Vault Premium protects keys in HSMs that are shared across tenants."
+            ],
+            "guid": "$+4/Pc*R;q",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::keyvault",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What does a Key Vault key rotation policy automate?",
+                "Creating a new key version on a schedule. Services that reference the versionless key URI pick up the new version automatically."
+            ],
+            "guid": "u{!sIOVpf3",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::keyvault",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Azure Policy or Azure RBAC: which stops an Owner from deploying a VM in a disallowed region?",
+                "Azure Policy — it governs what resources may look like, whoever deploys them. RBAC only governs who may act."
+            ],
+            "guid": "_xQ[CWkmER",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::policy",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "The Azure Policy effect {{c1::Deny}} blocks a non-compliant request, while {{c2::Audit}} lets it through and flags it.",
+                ""
+            ],
+            "guid": "u/!}LJVYn9",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000002",
+            "tags": [
+                "domain::identity",
+                "service::policy",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Azure Policy: DeployIfNotExists or Modify — which effect adds a missing tag to a resource?",
+                "Modify — it changes properties such as tags during create or update. DeployIfNotExists deploys a related resource, like a diagnostic setting."
+            ],
+            "guid": "e`29lHHH?H",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::policy",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Why do DeployIfNotExists and Modify policy assignments need a managed identity?",
+                "They deploy or change resources on your behalf, including during remediation, so the assignment needs its own identity holding the roles to do it."
+            ],
+            "guid": "wjN!X/df|s",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::policy",
+                "source::ms-learn",
+                "type::why"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Resources that existed before a DeployIfNotExists policy was assigned are non-compliant. How do you fix them?",
+                "Run a <b>remediation task</b>. On its own, the policy only acts on new create and update requests."
+            ],
+            "guid": "23VZAj>4@x",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::policy",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What is an Azure Policy initiative?",
+                "A set of policy definitions assigned and tracked as one unit — the Microsoft cloud security benchmark is one."
+            ],
+            "guid": "n7hL?Qsq]n",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::policy",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "CanNotDelete or ReadOnly resource lock: which still lets you resize a VM?",
+                "CanNotDelete — it only blocks deletion. ReadOnly blocks every write, which can break operations such as listing storage account keys."
+            ],
+            "guid": "pDd^eTWts#",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::rbac",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Why can a resource lock stop a subscription Owner?",
+                "Locks apply to every user and role, Owner included. The lock must be removed before the blocked operation will succeed."
+            ],
+            "guid": "HIPQx]iA1%",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::rbac",
+                "source::ms-learn",
+                "type::why"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Azure custom role or Entra custom role: which do you need to let operators restart VMs and nothing else?",
+                "An Azure custom role with the VM restart action. Entra custom roles cover directory objects such as app registrations, not Azure resources."
+            ],
+            "guid": "2&-)XM)w)i",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::rbac",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "In an Azure custom role, {{c1::NotActions}} subtracts permissions from Actions — it is not a deny.",
+                "Another role assignment can still grant the same permission. Use Azure Policy to actually block something."
+            ],
+            "guid": "[,]yrK6odu",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000002",
+            "tags": [
+                "domain::identity",
+                "service::rbac",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "User Access Administrator or Owner: which can assign Azure roles but can't create resources?",
+                "User Access Administrator. Owner can do both."
+            ],
+            "guid": "oCgHPm5!Wi",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::rbac",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Which Defender CSPM capability flags identities whose granted permissions far exceed what they use?",
+                "Permissions management (CIEM) — recommendations to remove unused or over-provisioned permissions across Azure, AWS and GCP."
+            ],
+            "guid": ":96pVR+?6h",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::defender-cloud",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Azure Backup {{c1::soft delete}} keeps deleted backup data recoverable for {{c2::14}} days by default.",
+                "Retention can be extended, and enhanced soft delete can be made always-on."
+            ],
+            "guid": "%=y~W<}X1}",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000002",
+            "tags": [
+                "domain::identity",
+                "service::backup",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Azure Backup: immutable vault or multi-user authorization (MUA) — which needs a second person's approval through a Resource Guard?",
+                "MUA. An immutable vault blocks operations that would remove recovery points, and can be locked so it can't be disabled."
+            ],
+            "guid": "m<7&|NHv1;",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::backup",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Why put the Resource Guard for Azure Backup MUA in a different subscription or tenant?",
+                "So the backup admin can't approve their own critical operation — the guard belongs to someone else, typically the security team."
+            ],
+            "guid": ")UZ}|xBUs:",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::backup",
+                "source::ms-learn",
+                "type::why"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Which Defender for Cloud capability scans IaC templates in your repos for misconfigurations before deployment?",
+                "DevOps security — connect GitHub, Azure DevOps or GitLab and it scans IaC in pipelines and pull requests."
+            ],
+            "guid": "Y/>$2}Rbw8",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::defender-cloud",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Why enforce security settings in the IaC template rather than fixing the deployed resource?",
+                "A template fix is reviewed like code and applies to every future deployment. A fix on the live resource drifts and is overwritten on the next deploy."
+            ],
+            "guid": "/j&R!:h3GX",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "source::ms-learn",
+                "type::why"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "How do you add ISO 27001 to the Defender for Cloud regulatory compliance dashboard?",
+                "Add the standard to the subscription under <b>Environment settings → Security policies</b>. Compliance standards need a paid plan such as Defender CSPM."
+            ],
+            "guid": "v#eV(Svzz[",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::defender-cloud",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Which security standard does Defender for Cloud apply to every subscription by default?",
+                "The Microsoft cloud security benchmark (MCSB)."
+            ],
+            "guid": "AOnZ`&ZFC6",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::defender-cloud",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "A Defender for Cloud recommendation doesn't apply to a test subscription. How do you stop it counting against you?",
+                "Create an <b>exemption</b> (waiver or mitigated) for that scope. The resource stops affecting Secure Score."
+            ],
+            "guid": ">xB{fGJNk,",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::defender-cloud",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Account SAS or user delegation SAS: which is signed with Entra credentials instead of the account key?",
+                "User delegation SAS — Microsoft's recommended kind. Account and service SAS are signed with the account key."
+            ],
+            "guid": "+uSC?GTEsh",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::storage",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Why disable shared key authorization on a storage account?",
+                "Account keys grant full access outside Entra ID and RBAC. Turning them off forces identity-based, auditable access — and kills key-signed SAS tokens."
+            ],
+            "guid": "@&&v+@Ot-A",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::storage",
+                "source::ms-learn",
+                "type::why"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "A service SAS must be revocable without rotating the storage account key. What should it be tied to?",
+                "A <b>stored access policy</b> on the container. Delete or change the policy and every SAS bound to it stops working."
+            ],
+            "guid": "iWdsj^:Z|#",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::storage",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "The storage account setting {{c1::Allow Blob anonymous access}} must be off to stop anyone making a container public.",
+                ""
+            ],
+            "guid": "AZ+@242vkZ",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000002",
+            "tags": [
+                "domain::storage-db-network",
+                "service::storage",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Storage Blob Data Reader or Reader: which lets a user read blob contents with Entra authentication?",
+                "Storage Blob Data Reader — a data-plane role. Reader is control-plane only: it sees the account, not the data."
+            ],
+            "guid": "XsC?3jMA((",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::storage",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What does \"Secure transfer required\" on a storage account enforce?",
+                "HTTPS for REST calls and encrypted SMB 3.x for Azure Files. Plain HTTP and unencrypted SMB are rejected."
+            ],
+            "guid": "cI:eH[8xq7",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::storage",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Microsoft-managed keys or customer-managed keys: which lets you cut off Azure's ability to decrypt your storage data?",
+                "Customer-managed keys in Key Vault or Managed HSM. Disable or revoke the key and the data becomes unreadable."
+            ],
+            "guid": "u4P*iII[>M",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::storage",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What does infrastructure encryption add to Azure Storage?",
+                "A second layer of AES-256 encryption at the infrastructure level, with a separate key, under the normal service-level encryption."
+            ],
+            "guid": "31.XmymYg,",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::storage",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Uploaded blobs must be checked for malware before an app processes them. Which Defender for Storage feature?",
+                "<b>On-upload malware scanning</b>. Results are written to blob index tags and can trigger alerts or automation."
+            ],
+            "guid": "%.=$g{^,O#",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::storage",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What does Defender for Storage activity monitoring alert on?",
+                "Suspicious access patterns — access from Tor exit nodes, unusual data extraction, or anonymous access to sensitive containers."
+            ],
+            "guid": "m(Ehy&go0v",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::storage",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Storage service endpoint or private endpoint: which still sends traffic to the account's public endpoint?",
+                "The service endpoint — traffic stays on the Azure backbone but targets the public endpoint. A private endpoint gives the account a private IP in your VNet."
+            ],
+            "guid": "8BRoOO@H:Y",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::storage",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What does a service endpoint policy add to a Storage service endpoint?",
+                "It limits which storage accounts the subnet may reach over the endpoint, which stops exfiltration to an attacker's own storage account."
+            ],
+            "guid": "`1Xb!kuPRr",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::storage",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "A storage account firewall blocks Azure Backup from reaching the account. Which setting fixes it?",
+                "The exception <b>Allow trusted Microsoft services</b>, or a resource instance rule for that specific resource."
+            ],
+            "guid": "ywx2MIcHQ$",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::storage",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What does immutable (WORM) blob storage protect against?",
+                "Changing or deleting blobs during the retention interval or legal hold — even by the account owner."
+            ],
+            "guid": "xIEc~JJ>9q",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::storage",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Azure SQL: server-level or database-level firewall rule — which moves with the database during geo-replication?",
+                "Database-level rules — they are stored in the database itself. Server-level rules live in master."
+            ],
+            "guid": "i:3*8g&tbc",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::sql",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Only Microsoft Entra identities may sign in to an Azure SQL logical server. What do you enable?",
+                "<b>Microsoft Entra-only authentication</b> — SQL authentication is turned off for the server."
+            ],
+            "guid": "~)&;d[XE%D",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::sql",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "TDE or Always Encrypted: which keeps data hidden even from the database engine and its admins?",
+                "Always Encrypted — the keys stay with the client app. TDE encrypts data at rest, but the engine decrypts it for anyone who can query."
+            ],
+            "guid": "YG<<?&8zuU",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::sql",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Does Dynamic Data Masking in Azure SQL encrypt anything?",
+                "No. It masks column values in query results for non-privileged users. The stored data is unchanged."
+            ],
+            "guid": "+um/)A,A_[",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::sql",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Azure SQL auditing: server-level or database-level policy — which covers every database on the server, including new ones?",
+                "The server-level policy. A database-level policy adds to it; it doesn't replace it."
+            ],
+            "guid": "CN6*Ef-KG)",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::sql",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What does Defender for SQL vulnerability assessment check?",
+                "Misconfigurations and excessive permissions in the database, compared against a baseline you approve, with remediation scripts."
+            ],
+            "guid": "?^6L{mK8ST",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::sql",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What kind of activity does Defender for Azure SQL threat protection alert on?",
+                "SQL injection, brute-force sign-in attempts, and access from unusual locations or principals."
+            ],
+            "guid": "a]Xgn7l)Vx",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::sql",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Which Defender plan protects Azure Database for PostgreSQL and MySQL?",
+                "Defender for open-source relational databases. Azure SQL and SQL on machines have their own Defender for SQL plans."
+            ],
+            "guid": "J-m7^f^|fh",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::sql",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Which Defender plan detects suspicious access to an Azure Cosmos DB account?",
+                "Defender for Azure Cosmos DB, one of the Defender for Databases plans."
+            ],
+            "guid": "<P2U/<YhqR",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::cosmosdb",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "NSG rules are processed in {{c1::priority}} order, lowest number first, and processing stops at the first match.",
+                ""
+            ],
+            "guid": "v{ih}t/k5j",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000002",
+            "tags": [
+                "domain::storage-db-network",
+                "service::nsg",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "A subnet NSG allows inbound 443, but the VM's NIC NSG denies it. Does the traffic reach the VM?",
+                "No. Inbound traffic must pass the subnet NSG and then the NIC NSG, and both have to allow it."
+            ],
+            "guid": "$LsRe&1,e/",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::nsg",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Which default NSG rule lets VMs in peered VNets talk to each other?",
+                "<b>AllowVnetInBound</b> — the VirtualNetwork tag includes peered and connected address spaces."
+            ],
+            "guid": "[Y1jd,?]$<",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::nsg",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Why use service tags in NSG rules instead of IP ranges?",
+                "Microsoft maintains the addresses behind a tag such as Storage or AzureCloud, so the rule stays correct as Azure's IP ranges change."
+            ],
+            "guid": ",>fRUV>#:T",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::nsg",
+                "source::ms-learn",
+                "type::why"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "AVNM security admin rule: Allow or Always Allow — which still lets an NSG deny the traffic?",
+                "Allow. Always Allow and Deny end evaluation, so the NSG never sees that traffic."
+            ],
+            "guid": "u=+;8U<uQ:",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::avnm",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Central IT must block inbound RDP from the internet on every VNet, and app teams must not be able to override it. Which feature?",
+                "An <b>Azure Virtual Network Manager security admin rule</b> with Deny. It is evaluated before the NSGs that app teams control."
+            ],
+            "guid": "j83Ql`2EhG",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::avnm",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "In Azure Virtual Network Manager, what decides which VNets a security admin configuration applies to?",
+                "Network groups — static membership, or dynamic membership through Azure Policy conditions."
+            ],
+            "guid": "iaqHCrj8#m",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::avnm",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Azure Firewall or NSG: which can filter outbound traffic by FQDN?",
+                "Azure Firewall. NSGs work only on IPs, ports and service tags."
+            ],
+            "guid": "OA9XFcT*AX",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::firewall",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Azure Firewall Standard or Premium: which adds TLS inspection and signature-based IDPS?",
+                "Premium. Standard filters by FQDN and threat intelligence, but can't decrypt traffic."
+            ],
+            "guid": "nH~vicPr@k",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::firewall",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Azure Firewall processes {{c1::DNAT}} rules first, then {{c2::network}} rules, then {{c3::application}} rules.",
+                ""
+            ],
+            "guid": "+|k|svWe#4",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000002",
+            "tags": [
+                "domain::storage-db-network",
+                "service::firewall",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Internet-bound traffic from spoke VNets must go through Azure Firewall in the hub. What do you configure?",
+                "A route table on the spoke subnets: 0.0.0.0/0 with the firewall's private IP as next hop."
+            ],
+            "guid": "_H`52)}<*V",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::firewall",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What does Azure Firewall Manager add?",
+                "Central firewall policies, with parent–child inheritance, applied across many firewalls and secured virtual hubs."
+            ],
+            "guid": "W9t~)=zFOR",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::firewall",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What makes a Virtual WAN hub a secured virtual hub?",
+                "An Azure Firewall (or partner security provider) deployed in the hub and managed by Firewall Manager."
+            ],
+            "guid": "F03Y]?m]Yd",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::vwan",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "In Virtual WAN, branch-to-VNet traffic must be inspected by the hub firewall. Which feature?",
+                "<b>Routing intent</b> with a private traffic routing policy that points at the hub firewall."
+            ],
+            "guid": "c([4$T?(`;",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::vwan",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Point-to-site VPN: which authentication type brings Conditional Access and MFA?",
+                "Microsoft Entra ID authentication (OpenVPN). Certificate and RADIUS authentication don't go through Entra Conditional Access."
+            ],
+            "guid": "qD2H~Qa/~Z",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::vpn",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What does a custom IPsec/IKE policy on an Azure VPN connection let you control?",
+                "The exact encryption and integrity algorithms and DH/PFS groups — to meet a compliance requirement or match an on-premises device."
+            ],
+            "guid": "qA!/RuTq_[",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::vpn",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Remote staff need on-premises file servers without a VPN, with Conditional Access per app. Which product?",
+                "<b>Microsoft Entra Private Access</b>: the Global Secure Access client on devices plus a private network connector on-premises."
+            ],
+            "guid": "gs0MHR%pt7",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::entra-private-access",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Entra Private Access: Quick Access or per-app access — which is the least-privilege end state?",
+                "Per-app access. Quick Access publishes broad network ranges to replace a VPN fast, and is meant as a bridge."
+            ],
+            "guid": "GMB+H13Wr`",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::entra-private-access",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Which component must run on-premises for Microsoft Entra Private Access to reach internal resources?",
+                "A Microsoft Entra private network connector, in a connector group with line of sight to the resources."
+            ],
+            "guid": "8zM8$Qc/w|",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::entra-private-access",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Why does a private endpoint usually need a private DNS zone such as privatelink.blob.core.windows.net?",
+                "Clients still use the service's normal name. The private zone makes that name resolve to the private endpoint's IP instead of the public one."
+            ],
+            "guid": ";yjrs?]lj+",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::private-link",
+                "source::ms-learn",
+                "type::why"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Your SaaS runs behind a Standard Load Balancer, and customers want to reach it privately from their own VNets. What do you create?",
+                "A <b>Private Link service</b> on the load balancer. Customers then create private endpoints that connect to it."
+            ],
+            "guid": "gV?5uBgE9?",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::private-link",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Does an NSG on a private endpoint's subnet filter traffic to the endpoint by default?",
+                "No. Network policies for private endpoints are off by default; enable them on the subnet for NSGs and route tables to apply."
+            ],
+            "guid": "BREA&KEhvx",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::private-link",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Network Watcher: IP flow verify or effective security rules — which names the rule that allows or denies one specific packet?",
+                "IP flow verify — you test a 5-tuple and it reports the matching rule. Effective security rules shows the whole combined rule set."
+            ],
+            "guid": "h>rpI3]+H#",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::network-watcher",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Which Network Watcher feature replaces NSG flow logs?",
+                "Virtual network flow logs."
+            ],
+            "guid": "g=Cmym_Ld?",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::network-watcher",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "DDoS Network Protection or the free default infrastructure protection: which gives you attack telemetry, alerts and access to Microsoft's rapid response team?",
+                "DDoS Network Protection. The free default protects Azure's platform as a whole and isn't tuned to your application."
+            ],
+            "guid": "S[p4UQGJU}",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::ddos",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Before rolling out Copilot, you need to find SharePoint sites shared with \"Everyone except external users\". Which tool?",
+                "SharePoint Advanced Management <b>data access governance (DAG) reports</b>."
+            ],
+            "guid": "?33mfXG41V",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::sharepoint",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Restricted Content Discovery or Restricted Access Control: which hides a site from Copilot and org-wide search but leaves permissions unchanged?",
+                "Restricted Content Discovery. Restricted Access Control limits who can open the site at all, to members of chosen groups."
+            ],
+            "guid": "Z=g^0HUVbO",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::sharepoint",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Owners of overshared SharePoint sites should fix their own permissions. Which SharePoint Advanced Management feature asks them to?",
+                "<b>Site access review</b>, started from a data access governance report."
+            ],
+            "guid": "oDiKztS_[T",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::sharepoint",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What does Microsoft Purview DSPM for AI assess automatically every week?",
+                "The top 100 SharePoint sites by usage — a data risk assessment that flags content Copilot could overshare."
+            ],
+            "guid": "-f;}`m{@r&",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::purview",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Users must be stopped from pasting sensitive data into third-party AI sites in Edge. What is the quickest start?",
+                "A DSPM for AI one-click policy, which creates a Purview DLP policy that blocks sensitive info being sent to AI apps in Edge."
+            ],
+            "guid": "XQ+T/]l#am",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::purview",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Why must devices be onboarded to Purview before DSPM for AI can see ChatGPT usage?",
+                "Those prompts happen in the browser. Purview sees them only through endpoint DLP on onboarded devices (plus the browser extension)."
+            ],
+            "guid": "/@0CVgfKIm",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::purview",
+                "source::ms-learn",
+                "type::why"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "At what moment does Defender real-time protection inspect a Copilot Studio agent?",
+                "Each time the agent is about to invoke a tool. Defender returns allow or block before the tool runs."
+            ],
+            "guid": ",O+S)_}0_z",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::copilot-studio",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "You turned on Copilot Studio real-time protection in the Defender portal, but nothing is blocked yet. Who else has to act?",
+                "A Power Platform administrator, who completes onboarding in Power Platform with the same Entra app ID."
+            ],
+            "guid": "tuBvnv&=4~",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::copilot-studio",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What does the default real-time protection rule for cloud AI agents do in Microsoft Defender?",
+                "It only audits: matching activity is recorded as a behavior without being stopped. Blocking needs a custom rule."
+            ],
+            "guid": "V:8w&WYlZD",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::defender-xdr",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Defender for AI Services or Foundry guardrails: which raises SOC alerts about jailbreak attempts on your model deployment?",
+                "Defender for AI Services in Defender for Cloud. Guardrails filter the content; Defender turns detections into security alerts."
+            ],
+            "guid": "Y7-G+a|Z{F",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::defender-cloud",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What does prompt evidence add to Defender for AI Services alerts?",
+                "The suspicious part of the prompt or response, so the analyst can see exactly what triggered the alert."
+            ],
+            "guid": "T^C9.u^I0K",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::defender-cloud",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Prompt Shields: user prompt attack or document attack — which catches instructions hidden in an email the agent reads?",
+                "Document attack (indirect prompt injection). User prompt attacks come from the user's own input."
+            ],
+            "guid": "V(w)32p/nx",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::foundry",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Which Prompt Shields detection is off by default in Foundry guardrails?",
+                "Document attack detection — you have to enable it. User prompt attack detection is on by default."
+            ],
+            "guid": "b<?6Gluo^Z",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::foundry",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "A Foundry model deployment and the agent that uses it have different guardrails. Which one applies?",
+                "The agent's guardrail — it overrides the model's."
+            ],
+            "guid": "*,}Ke8}%uW",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::foundry",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What does the Task adherence guardrail in Foundry detect?",
+                "An agent drifting from its assigned task — for example, tool calls that don't match what the user asked for."
+            ],
+            "guid": "dQ[S{v{~$Z",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::foundry",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Several teams share one model deployment and one team keeps exhausting its TPM quota. What do you put in front of it?",
+                "An <b>AI gateway in API Management</b> with the llm-token-limit policy, keyed per team or subscription."
+            ],
+            "guid": "g9UoIO9Avt",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::apim",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Through a Foundry AI Gateway, exceeding the TPM limit returns HTTP {{c1::429}}, and exhausting the total token quota returns HTTP {{c2::403}}.",
+                ""
+            ],
+            "guid": "rNmW|^c|8(",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000002",
+            "tags": [
+                "domain::compute",
+                "service::apim",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "At what scope does the Foundry AI Gateway enforce token limits?",
+                "Per project — each project on the shared gateway gets its own TPM limit and quota."
+            ],
+            "guid": "bq<2&a@Y.H",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::foundry",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What does the Data and AI security dashboard in Defender for Cloud show?",
+                "Data and AI resources in one place: protection coverage, sensitive data findings, internet exposure, and the top alerts, recommendations and attack paths."
+            ],
+            "guid": "og)dJI*jF-",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::defender-cloud",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Why does the Data and AI security dashboard need Defender CSPM with sensitive data discovery turned on?",
+                "Without it Defender can't tell which stores hold sensitive data, so it can't rank exposure by what is actually at risk."
+            ],
+            "guid": "@&yGPqxFoR",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::defender-cloud",
+                "source::ms-learn",
+                "type::why"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What does Microsoft Entra Agent ID give an AI agent?",
+                "Its own identity in Entra, so Conditional Access, ID Protection and identity governance apply to the agent as they do to users."
+            ],
+            "guid": "ypTM9a);Tz",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::entra",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Agents created by people who have since left the company have no accountable person. Which Entra Agent ID governance control prevents that?",
+                "Required <b>sponsors and owners</b> for every agent identity, with access granted through time-bound access packages."
+            ],
+            "guid": "F+V&V_oT}P",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::entra",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Where do you block an agent for the whole organization in Microsoft 365?",
+                "Microsoft 365 admin center → Agents → All agents → Block. Blocking also turns off every instance of the agent."
+            ],
+            "guid": "3vo}=h/Ja0",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::m365-admin",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "How does the Microsoft 365 admin center surface shared agents whose creator was deleted?",
+                "An <b>Agents without owners</b> count and filter in the agent registry. From there you assign an owner, block or delete."
+            ],
+            "guid": "p[qE[v(@Y9",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::m365-admin",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Azure Disk Encryption or encryption at host: which covers temp disks and caches without BitLocker or dm-crypt in the guest?",
+                "Encryption at host — encryption happens on the VM host. ADE runs BitLocker/dm-crypt in the guest OS and is being retired."
+            ],
+            "guid": "|oc6.)Frl?",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::vm",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Server-side encryption of managed disks with customer-managed keys is configured through which resource?",
+                "A <b>disk encryption set</b>, which points at the key in Key Vault or Managed HSM."
+            ],
+            "guid": "[2b+;yg&MY",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::vm",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Azure Bastion Basic or Standard: which supports native-client RDP/SSH connections?",
+                "Standard (and Premium). Basic supports connections through the browser only."
+            ],
+            "guid": "hg$_zUY#+C",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::bastion",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Why does Azure Bastion let you remove public IPs from VMs?",
+                "Users connect to Bastion over TLS, and Bastion reaches the VM's private IP. RDP and SSH are never exposed to the internet."
+            ],
+            "guid": "N*gvhoEE%~",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::bastion",
+                "source::ms-learn",
+                "type::why"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Azure Bastion must be deployed in a subnet named {{c1::AzureBastionSubnet}} of at least /26.",
+                ""
+            ],
+            "guid": "-PGF9lsWB@",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000002",
+            "tags": [
+                "domain::compute",
+                "service::bastion",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What does just-in-time VM access change when it opens a port?",
+                "It adds a temporary allow rule to the NSG (and Azure Firewall, if present) for the requester's IP, then removes it when time runs out."
+            ],
+            "guid": "0&w{-yG^6,",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::defender-cloud",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Which Defender for Servers plan includes just-in-time VM access?",
+                "Plan 2."
+            ],
+            "guid": "wtd4-4LiQc",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::defender-cloud",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Defender for Servers Plan 1 or Plan 2: which includes agentless scanning and file integrity monitoring?",
+                "Plan 2. Plan 1 is mainly Defender for Endpoint EDR plus agent-based vulnerability assessment."
+            ],
+            "guid": "~[TdTl&hz!",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::defender-cloud",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "How does agentless scanning in Defender for Servers inspect a VM?",
+                "It snapshots the disks and scans them out of band for vulnerabilities, software inventory, secrets and malware — no agent, no load on the VM."
+            ],
+            "guid": "@`=L)]|!J)",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::defender-cloud",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "An on-premises server was onboarded by installing Defender for Endpoint directly instead of through Azure Arc. What do you lose?",
+                "Most Plan 2 features — you get Plan 1 plus premium vulnerability management only. Onboard through Arc for full coverage."
+            ],
+            "guid": "oi.C7s3.IL",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::arc",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "How are AWS EC2 instances onboarded to Defender for Servers by default?",
+                "Connecting the AWS account to Defender for Cloud onboards its machines as Azure Arc-enabled servers."
+            ],
+            "guid": "YU^x.y&$Rz",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::arc",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What does file integrity monitoring in Defender for Servers watch for?",
+                "Changes to OS files, registry keys and application files that could indicate an attack."
+            ],
+            "guid": "kCFkyPj5kh",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::defender-cloud",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Trusted launch or confidential VM: which encrypts VM memory so even the host can't read it?",
+                "Confidential VM. Trusted launch protects the boot chain with secure boot and vTPM, not memory."
+            ],
+            "guid": "hLk`vKx7O$",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::vm",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Trusted launch combines {{c1::secure boot}}, {{c2::a virtual TPM (vTPM)}} and {{c3::boot integrity monitoring}}.",
+                "Set by choosing the Trusted launch security type when you create the VM."
+            ],
+            "guid": "og#I<t}Yb.",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000002",
+            "tags": [
+                "domain::compute",
+                "service::vm",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Why does secure boot defeat a bootkit?",
+                "Only boot components signed by trusted publishers load, so a bootloader patched by malware refuses to start."
+            ],
+            "guid": ",v})TN0eN&",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::vm",
+                "source::ms-learn",
+                "type::why"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What does Azure Machine Configuration (formerly Guest Configuration) do?",
+                "Audits or applies settings inside the OS of Azure and Arc machines through Azure Policy — password rules, installed software, and so on."
+            ],
+            "guid": "PjnSF~WKK@",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::policy",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Why does Azure Machine Configuration need the VM to have a managed identity?",
+                "The extension uses it to download configuration packages and report compliance back to Azure."
+            ],
+            "guid": "m811+qq,.:",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::policy",
+                "source::ms-learn",
+                "type::why"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What does Defender for Containers protect?",
+                "Kubernetes clusters (AKS, EKS, GKE, Arc-enabled) at runtime, plus vulnerability assessment of container images in registries."
+            ],
+            "guid": "ua=7`>!V.t",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::aks",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "AKS: Azure RBAC or Kubernetes RBAC for authorization — which lets you grant cluster access with Azure role assignments?",
+                "Azure RBAC for Kubernetes authorization. With Kubernetes RBAC you write Role and RoleBinding objects inside the cluster."
+            ],
+            "guid": "Rq`NnM>sqe",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::aks",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "An AKS API server must not be reachable from the internet at all. Which option?",
+                "A <b>private cluster</b> — the API server gets a private IP in your VNet. Authorized IP ranges only restrict the public endpoint."
+            ],
+            "guid": "UaA1.hsdM}",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::aks",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Why disable local accounts on an AKS cluster?",
+                "The local cluster-admin credential bypasses Entra ID, so it escapes Conditional Access, MFA and per-user audit."
+            ],
+            "guid": "!pSF_D/%]4",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::aks",
+                "source::ms-learn",
+                "type::why"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What does Microsoft Entra Workload ID do for AKS pods?",
+                "A pod exchanges its Kubernetes service account token for an Entra token, so it reaches Azure resources without stored secrets."
+            ],
+            "guid": "|}B)-R%]^I",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::aks",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "ACR admin user or a managed identity with AcrPull: which should AKS use to pull images?",
+                "AcrPull on the cluster's kubelet managed identity. The admin user is a single shared credential that can also push."
+            ],
+            "guid": "/CV`cl`^(9",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::acr",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Which Azure Container Registry tier do you need for private endpoints?",
+                "Premium."
+            ],
+            "guid": "qi*x+?!@CM",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::acr",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "A Container Apps workload must be reachable only from your VNet. What do you configure?",
+                "A Container Apps environment in your VNet with <b>internal</b> ingress, so there's no public endpoint."
+            ],
+            "guid": "F.lk]~k,SU",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::container-apps",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Entra sign-in must protect an Azure Functions HTTP API without code changes. Which feature?",
+                "App Service <b>authentication (Easy Auth)</b> with the Microsoft identity provider."
+            ],
+            "guid": "|{geJ8E>XO",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::functions",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Function access key or Easy Auth: which actually proves who the caller is?",
+                "Easy Auth with Entra ID. A function key is a shared secret, and anyone holding it gets in."
+            ],
+            "guid": "P2@V/.rM8i",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::functions",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "App Service and Functions: VNet integration or private endpoint — which controls <i>inbound</i> access to the app?",
+                "The private endpoint. VNet integration only routes the app's outbound traffic into your VNet."
+            ],
+            "guid": "_xK5AYDGSN",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::app-service",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "An App Service app should accept traffic only from your Azure Front Door profile. How?",
+                "An access restriction allowing the AzureFrontDoor.Backend service tag, plus a header check on X-Azure-FDID for your Front Door ID."
+            ],
+            "guid": "AQ);![y$9?",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::app-service",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Why isn't the URL of a Logic App HTTP trigger enough protection by itself?",
+                "The URL carries a SAS signature, so anyone who has it can fire the workflow. Restrict caller IPs or require Entra OAuth as well."
+            ],
+            "guid": "N&9IcQSkZ`",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::logic-apps",
+                "source::ms-learn",
+                "type::why"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "WAF on Application Gateway or on Front Door: which inspects traffic at Microsoft's global edge before it reaches your region?",
+                "Front Door WAF. Application Gateway WAF is regional and sits in your VNet."
+            ],
+            "guid": "El;AB&?;ME",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::waf",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "WAF Detection or Prevention mode: which blocks a request that matches a rule?",
+                "Prevention. Detection only logs — start there to tune out false positives."
+            ],
+            "guid": "l_,iKEB+wf",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::waf",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "In Azure WAF, {{c1::custom rules}} are evaluated before the managed rule set.",
+                "Use them for geo-filtering, IP allow/deny lists and rate limits."
+            ],
+            "guid": "t;Hu#M2SYX",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000002",
+            "tags": [
+                "domain::compute",
+                "service::waf",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "API Management must reject requests that lack a valid Entra-issued token before calling the back end. Which policy?",
+                "<b>validate-jwt</b> (or validate-azure-ad-token)."
+            ],
+            "guid": "5X(C+8z%Z(",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::apim",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Which API Management policy throttles each client separately, by IP or subscription?",
+                "rate-limit-by-key."
+            ],
+            "guid": "s?cVXE1+Wo",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::apim",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Why should API Management call the back end with its managed identity?",
+                "The back end then trusts only APIM's identity, and no credential sits in the APIM policy."
+            ],
+            "guid": "^2,9+&ONg]",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::apim",
+                "source::ms-learn",
+                "type::why"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "{{c1::Attack path analysis}} in Defender CSPM shows how an attacker could chain weaknesses to reach a critical asset.",
+                ""
+            ],
+            "guid": "k>gK/,SU>=",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000002",
+            "tags": [
+                "domain::posture",
+                "service::defender-cloud",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Cloud security explorer or attack path analysis: which do you use to ask your own question, such as \"internet-exposed VMs with a high-severity CVE\"?",
+                "Cloud security explorer — you build the graph query. Attack paths are precomputed by Defender."
+            ],
+            "guid": "yV/*ghpR]-",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::defender-cloud",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What does a Defender for Cloud governance rule do?",
+                "Assigns an owner and a due date to matching recommendations automatically, so remediation is tracked."
+            ],
+            "guid": "hqE/Be#?<6",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::defender-cloud",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Defender for Cloud must assess an AWS account. What do you create?",
+                "An AWS connector under Environment settings. It deploys a CloudFormation template that grants Defender the roles it needs."
+            ],
+            "guid": "b;6?TFkxP+",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::defender-cloud",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What does Defender for Resource Manager detect?",
+                "Suspicious management operations on Azure — calls from malicious IPs, or use of exploitation toolkits against your subscription."
+            ],
+            "guid": "y#_pbL>gB<",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::defender-cloud",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Which engine provides vulnerability assessment for Azure VMs in Defender for Servers?",
+                "Microsoft Defender Vulnerability Management, turned on by default through the Defender for Endpoint integration."
+            ],
+            "guid": "pfwPXIh<@d",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::defender-cloud",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Some VMs can't run the Defender for Endpoint agent, but you still need their vulnerability findings. What do you turn on?",
+                "Agentless scanning, in Defender for Servers Plan 2 or Defender CSPM."
+            ],
+            "guid": "wY_=0hXP06",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::defender-cloud",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "How does Defender EASM discover assets you didn't know you owned?",
+                "From seeds you give it (domains, IP blocks, ASNs), it keeps following connections such as DNS, WHOIS and certificates."
+            ],
+            "guid": "fha`7/4z!Y",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::defender-easm",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "When is a second Microsoft Sentinel workspace justified?",
+                "Data residency or sovereignty, billing separation, or strict access separation such as between subsidiaries. Otherwise use one workspace with table-level or resource-context RBAC."
+            ],
+            "guid": "l@m^&~f*p!",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::sentinel",
+                "source::ms-learn",
+                "type::why"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Which Microsoft Sentinel role lets an analyst manage incidents but not create analytics rules?",
+                "Microsoft Sentinel Responder."
+            ],
+            "guid": "^1q%$?`ZQU",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::sentinel",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Which role does Sentinel itself need on a playbook's resource group before automation rules can run that playbook?",
+                "Microsoft Sentinel Automation Contributor."
+            ],
+            "guid": "OlDC!F!8<y",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::sentinel",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "The {{c1::Microsoft Sentinel Playbook Operator}} role lets a user run playbooks manually without being able to edit them.",
+                ""
+            ],
+            "guid": "0Pe-jp6S.h",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000002",
+            "tags": [
+                "domain::posture",
+                "service::sentinel",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What does a Microsoft Sentinel content hub solution package together?",
+                "Connectors, analytics rules, workbooks, hunting queries, parsers and playbooks for one product or scenario, installed and updated as a unit."
+            ],
+            "guid": "F||UP~F9Xr",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::sentinel",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Sentinel needs Azure Activity logs from every subscription. How does the connector apply at scale?",
+                "The Azure Activity connector uses an Azure Policy assignment to create a diagnostic setting on each subscription."
+            ],
+            "guid": "3wD^I8:OAO",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::sentinel",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "How do CEF messages from a firewall appliance reach Microsoft Sentinel?",
+                "The appliance sends them to a Linux log forwarder running the Azure Monitor Agent, and a data collection rule sends them to the CommonSecurityLog table."
+            ],
+            "guid": "JY5X*TZP,8",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::sentinel",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Syslog via AMA or CEF via AMA: which lands in the CommonSecurityLog table?",
+                "CEF via AMA. Plain Syslog lands in the Syslog table."
+            ],
+            "guid": "A`4R33hnMg",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::sentinel",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Why must a CEF source not also be collected by a Syslog DCR on the same facility?",
+                "The events are ingested twice — into Syslog and into CommonSecurityLog — so you pay double and get duplicates."
+            ],
+            "guid": "2V%:3_>!+}",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::sentinel",
+                "source::ms-learn",
+                "type::why"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Sentinel: Windows Security Events via AMA or Windows Forwarded Events — which writes to the SecurityEvent table?",
+                "Windows Security Events via AMA. Forwarded Events writes to WindowsEvent, so built-in rules that query SecurityEvent won't match it."
+            ],
+            "guid": ":g(w8_a:vg",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::sentinel",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What must run on the Windows Event Collector (WEC) server for the Windows Forwarded Events connector?",
+                "The Azure Monitor Agent, collecting the Forwarded Events channel through a data collection rule."
+            ],
+            "guid": "kY7d<z9#3X",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::sentinel",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What does an on-premises Windows server need before the Azure Monitor Agent can collect from it?",
+                "Azure Arc — the agent needs the server to exist as an Azure resource."
+            ],
+            "guid": "$ua7knqXC,",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::arc",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "You want only logon events 4624 and 4625 from Windows servers, to save ingestion cost. What do you configure?",
+                "A custom <b>XPath query</b> in the data collection rule."
+            ],
+            "guid": "2)r#I*bexH",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::sentinel",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Which API sends custom application data into a Sentinel custom (_CL) table?",
+                "The <b>Logs Ingestion API</b>, through a data collection rule that maps and transforms the data into the table."
+            ],
+            "guid": "QURkEQEB[M",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::sentinel",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What does an ingestion-time transformation in a data collection rule let you do?",
+                "Filter or reshape rows with KQL before they're stored — drop noisy events, strip PII, or route data to another table."
+            ],
+            "guid": ";2.Oyh_p/9",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::sentinel",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Every incident from one analytics rule must be assigned to the network team and tagged, without a Logic App. Which feature?",
+                "An <b>automation rule</b> — it can assign owners, add tags, and change status or severity on its own."
+            ],
+            "guid": "5ZC>A-b9P?",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::sentinel",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Why should a Sentinel playbook authenticate with a managed identity?",
+                "The Logic App gets only the roles it needs, such as Microsoft Sentinel Responder, and no credential is stored in its connections."
+            ],
+            "guid": "goe!wUS1+s",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::sentinel",
+                "source::ms-learn",
+                "type::why"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Enabling Microsoft Sentinel on a workspace includes free retention for the first {{c1::90}} days.",
+                "Longer analytics-tier retention, and data lake retention, are billed."
+            ],
+            "guid": "x=@Ll/RcD7",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000002",
+            "tags": [
+                "domain::posture",
+                "service::sentinel",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Sentinel analytics tier or data lake tier: which should hold high-volume firewall logs you only need for forensics?",
+                "The data lake tier — cheap long-term storage queried with KQL jobs, but no real-time analytics rules."
+            ],
+            "guid": "-v,(+%!I}i",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::sentinel",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Total retention in the Microsoft Sentinel data lake can be extended to up to {{c1::12}} years.",
+                ""
+            ],
+            "guid": "A?K^m;.[k%",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000002",
+            "tags": [
+                "domain::posture",
+                "service::sentinel",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What happens if you shorten a Sentinel table's total retention by mistake?",
+                "Microsoft waits 30 days before deleting the data, so you can revert the change."
+            ],
+            "guid": ")nt`aMiU,S",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::sentinel",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Which Defender XDR advanced hunting table holds Microsoft 365 audit activity from SharePoint, OneDrive and Exchange?",
+                "CloudAppEvents."
+            ],
+            "guid": "w9Ol+8-TPL",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::defender-xdr",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Where can you search the Purview unified audit log without leaving the Defender portal?",
+                "The <b>Audit</b> page in the Microsoft Defender portal."
+            ],
+            "guid": "2.n&*Bi?ET",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::purview",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Security Copilot owner or contributor: which can change which preinstalled plugins are available to the tenant?",
+                "Owner. Contributors create sessions and run promptbooks, but can't manage plugin availability or capacity."
+            ],
+            "guid": "NgGY8euKb(",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::security-copilot",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Why doesn't the Copilot contributor role by itself show an analyst Sentinel incidents in Security Copilot?",
+                "Security Copilot acts on behalf of the user. The user also needs a Sentinel role, such as Microsoft Sentinel Reader, for the plugin to return data."
+            ],
+            "guid": ":Tnv:<,q;z",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::security-copilot",
+                "source::ms-learn",
+                "type::why"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What do you purchase to give Security Copilot capacity?",
+                "Security compute units (SCUs), provisioned as an Azure resource."
+            ],
+            "guid": "]b_P<X:9B6",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::security-copilot",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Analysts need Security Copilot access, but must not be made Security Administrator. What do you assign?",
+                "A security group added to the <b>Copilot contributor</b> role in Security Copilot role assignment."
+            ],
+            "guid": "/)C;w4VBPO",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::security-copilot",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "By default, who can add custom plugins in Security Copilot?",
+                "Only owners. An owner can let contributors add plugins for themselves, or for everyone."
+            ],
+            "guid": "x[m/^hs-gz",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::security-copilot",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What is a Security Copilot promptbook?",
+                "A saved sequence of prompts that runs as one workflow — for example, an incident summary followed by recommended actions."
+            ],
+            "guid": "ehzVZ2ZjHG",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::security-copilot",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Partner-built Security Copilot agents are acquired through the {{c1::Microsoft Security Store}}.",
+                ""
+            ],
+            "guid": "RJ?vqR:Jx#",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000002",
+            "tags": [
+                "domain::posture",
+                "service::security-copilot",
+                "source::ms-learn",
+                "type::fact"
             ]
         }
     ],
