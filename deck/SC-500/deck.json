@@ -1,0 +1,525 @@
+{
+    "__type__": "Deck",
+    "children": [],
+    "crowdanki_uuid": "9482f74d-d227-11f1-b9bc-5d3d79163725",
+    "deck_config_uuid": "a1b2c3d4-0000-4000-8000-000000000010",
+    "deck_configurations": [
+        {
+            "__type__": "DeckConfig",
+            "answerAction": 0,
+            "autoplay": true,
+            "buryInterdayLearning": false,
+            "crowdanki_uuid": "a1b2c3d4-0000-4000-8000-000000000010",
+            "desiredRetention": 0.9,
+            "dyn": false,
+            "easyDaysPercentages": [
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "fsrsParams5": [],
+            "fsrsParams6": [],
+            "fsrsWeights": [],
+            "ignoreRevlogsBeforeDate": "",
+            "interdayLearningMix": 0,
+            "lapse": {
+                "delays": [
+                    10.0
+                ],
+                "leechAction": 1,
+                "leechFails": 8,
+                "minInt": 1,
+                "mult": 0.0
+            },
+            "maxTaken": 60,
+            "name": "Mnemonic trainee",
+            "new": {
+                "bury": false,
+                "delays": [
+                    1.0,
+                    10.0
+                ],
+                "initialFactor": 2500,
+                "ints": [
+                    1,
+                    4,
+                    0
+                ],
+                "order": 1,
+                "perDay": 10
+            },
+            "newGatherPriority": 0,
+            "newMix": 0,
+            "newPerDayMinimum": 0,
+            "newSortOrder": 0,
+            "questionAction": 0,
+            "replayq": true,
+            "rev": {
+                "bury": false,
+                "ease4": 1.3,
+                "hardFactor": 1.2,
+                "ivlFct": 1.0,
+                "maxIvl": 36500,
+                "perDay": 100
+            },
+            "reviewOrder": 0,
+            "secondsToShowAnswer": 0.0,
+            "secondsToShowQuestion": 0.0,
+            "sm2Retention": 0.9,
+            "stopTimerOnAnswer": false,
+            "timer": 0,
+            "waitForAudio": true,
+            "weightSearch": ""
+        }
+    ],
+    "desc": "Shared SC-500 deck for mnemonic cloud trainees. Import with CrowdAnki; read the repo README before adding cards.",
+    "desiredRetention": null,
+    "dyn": 0,
+    "extendNew": 0,
+    "extendRev": 0,
+    "media_files": [],
+    "name": "SC-500",
+    "newLimit": null,
+    "newLimitToday": null,
+    "note_models": [
+        {
+            "__type__": "NoteModel",
+            "crowdanki_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "css": ".card {\n    font-family: arial;\n    font-size: 20px;\n    line-height: 1.5;\n    text-align: center;\n    color: black;\n    background-color: white;\n}\n",
+            "flds": [
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": -752497442769474117,
+                    "name": "Front",
+                    "ord": 0,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": -7487524554314126683,
+                    "name": "Back",
+                    "ord": 1,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": null
+                }
+            ],
+            "latexPost": "\\end{document}",
+            "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+            "latexsvg": false,
+            "name": "Mnemonic Basic",
+            "originalStockKind": 1,
+            "req": [
+                [
+                    0,
+                    "any",
+                    [
+                        0
+                    ]
+                ]
+            ],
+            "sortf": 0,
+            "tmpls": [
+                {
+                    "afmt": "{{FrontSide}}\n\n<hr id=answer>\n\n{{Back}}",
+                    "bafmt": "",
+                    "bfont": "",
+                    "bqfmt": "",
+                    "bsize": 0,
+                    "did": null,
+                    "id": 3214181180831983863,
+                    "name": "Card 1",
+                    "ord": 0,
+                    "qfmt": "{{Front}}"
+                }
+            ],
+            "type": 0
+        },
+        {
+            "__type__": "NoteModel",
+            "crowdanki_uuid": "a1b2c3d4-0000-4000-8000-000000000002",
+            "css": ".card {\n    font-family: arial;\n    font-size: 20px;\n    line-height: 1.5;\n    text-align: center;\n    color: black;\n    background-color: white;\n}\n.cloze {\n    font-weight: bold;\n    color: blue;\n}\n.nightMode .cloze {\n    color: lightblue;\n}\n",
+            "flds": [
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": -854731162634767846,
+                    "name": "Text",
+                    "ord": 0,
+                    "plainText": false,
+                    "preventDeletion": true,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": 0
+                },
+                {
+                    "collapsed": false,
+                    "description": "",
+                    "excludeFromSearch": false,
+                    "font": "Arial",
+                    "id": 3244808946475109325,
+                    "name": "Back Extra",
+                    "ord": 1,
+                    "plainText": false,
+                    "preventDeletion": false,
+                    "rtl": false,
+                    "size": 20,
+                    "sticky": false,
+                    "tag": 1
+                }
+            ],
+            "latexPost": "\\end{document}",
+            "latexPre": "\\documentclass[12pt]{article}\n\\special{papersize=3in,5in}\n\\usepackage[utf8]{inputenc}\n\\usepackage{amssymb,amsmath}\n\\pagestyle{empty}\n\\setlength{\\parindent}{0in}\n\\begin{document}\n",
+            "latexsvg": false,
+            "name": "Mnemonic Cloze",
+            "originalStockKind": 5,
+            "req": [
+                [
+                    0,
+                    "any",
+                    [
+                        0
+                    ]
+                ]
+            ],
+            "sortf": 0,
+            "tmpls": [
+                {
+                    "afmt": "{{cloze:Text}}<br>\n{{Back Extra}}",
+                    "bafmt": "",
+                    "bfont": "",
+                    "bqfmt": "",
+                    "bsize": 0,
+                    "did": null,
+                    "id": -2869178641437529405,
+                    "name": "Cloze",
+                    "ord": 0,
+                    "qfmt": "{{cloze:Text}}"
+                }
+            ],
+            "type": 1
+        }
+    ],
+    "notes": [
+        {
+            "__type__": "Note",
+            "fields": [
+                "Why is Secure Score not a compliance score?",
+                "Secure Score measures adoption of Microsoft's own recommendations. Regulatory compliance in Defender for Cloud measures a named framework such as ISO 27001 or NIST SP 800-53."
+            ],
+            "guid": "B!kE,V8B1#",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::defender-cloud",
+                "source::ms-learn",
+                "type::why"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Which service extends Defender for Servers to on-premises, AWS and GCP machines?",
+                "Azure Arc — it projects the server into Azure as a connected machine, which Defender for Cloud can then onboard."
+            ],
+            "guid": "D|7<)ncnpw",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::defender-cloud",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "NSG or ASG: which one groups VMs by role so rules refer to the group instead of IP ranges?",
+                "The application security group (ASG). The NSG holds the rules; the ASG is what those rules point at."
+            ],
+            "guid": "FbFhdVxWB}",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::firewall",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Which Microsoft Entra feature grants Global Administrator for a fixed window, with approval, instead of permanently?",
+                "Privileged Identity Management (PIM) — an <b>eligible</b> assignment the user activates."
+            ],
+            "guid": "G^x$x_6qyj",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::entra",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "What score does SC-500 require to pass?",
+                "700."
+            ],
+            "guid": "HvpyXxDcum",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "A storage account must be reachable only from one VNet subnet. Storage firewall rule or private endpoint?",
+                "Both restrict access, but only the private endpoint gives the account a private IP in the subnet and lets you drop the public endpoint entirely. Firewall rules still allow traffic over the public endpoint."
+            ],
+            "guid": "M&ygaFY~hH",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::firewall",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "In Microsoft Sentinel, {{c1::automation rules}} decide when a response runs, and {{c2::playbooks}} are the Logic Apps that carry it out.",
+                ""
+            ],
+            "guid": "NT.i0T&ot{",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000002",
+            "tags": [
+                "domain::posture",
+                "service::sentinel",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Which Defender for Cloud capability scans resources and code for exposed secrets?",
+                "Defender CSPM secret scanning."
+            ],
+            "guid": "NyUQqT#!Qw",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::defender-cloud",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "A Copilot Studio agent's identity is compromised. Which tool shows what that agent could reach?",
+                "Defender XDR blast radius analysis for Microsoft Entra Agent ID."
+            ],
+            "guid": "Ps^j^Gb;I/",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::defender-cloud",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Which diagnostic shows the security rules actually in force on a VM's network interface, after all NSGs are combined?",
+                "Azure Network Watcher effective security rules."
+            ],
+            "guid": "Q+@;SU@8^G",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "PIM: what separates an <i>eligible</i> assignment from an <i>active</i> one?",
+                "Active = the role is held right now. Eligible = the user must activate it, for a limited time and usually behind approval and MFA."
+            ],
+            "guid": "QF2cU$+VMW",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::entra",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Which Microsoft Purview capability surfaces data that Microsoft Copilot could over-expose?",
+                "Purview Data Security Posture Management (DSPM) for AI."
+            ],
+            "guid": "cPZOH$eDsT",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::purview",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Why does just-in-time VM access reduce risk rather than merely add friction?",
+                "A permanently open management port is scanned and brute-forced continuously. JIT shrinks the exposed window from always to a few minutes a week."
+            ],
+            "guid": "dR#lw#O0R]",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::defender-cloud",
+                "source::lab",
+                "type::why"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Azure SQL auditing can write its log to {{c1::a storage account}}, {{c2::Log Analytics}} or {{c3::Event Hubs}}.",
+                ""
+            ],
+            "guid": "f_r%^hAC{c",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000002",
+            "tags": [
+                "domain::storage-db-network",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Admins need occasional RDP to a VM, but the port must not stand open. Which Defender for Servers feature?",
+                "Just-in-time (JIT) VM access — the port opens for a bounded window after a request is approved."
+            ],
+            "guid": "hsR=W1L}#v",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::compute",
+                "service::defender-cloud",
+                "source::ms-learn",
+                "type::scenario"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Defender EASM or Defender CSPM: which finds internet-facing assets you did not know you owned?",
+                "Defender External Attack Surface Management (EASM). CSPM assesses the posture of assets already known to Azure."
+            ],
+            "guid": "jNzvvo@PQ1",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::defender-cloud",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Private endpoint or Private Link service: which is the consumer-side network interface inside your own VNet?",
+                "The private endpoint. Private Link service is the provider side — it publishes your service so others can reach it privately."
+            ],
+            "guid": "nh!&kXSY=^",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::storage-db-network",
+                "service::firewall",
+                "source::ms-learn",
+                "type::discriminator"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "How does Microsoft Sentinel collect Windows Security events from servers?",
+                "Data collection rules (DCR), optionally fed by Windows Event Forwarding for machines that cannot run the agent."
+            ],
+            "guid": "psA^aMUD&6",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::posture",
+                "service::sentinel",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Azure Key Vault stores {{c1::keys}}, {{c2::secrets}} and {{c3::certificates}}.",
+                ""
+            ],
+            "guid": "rBW:a&OKwP",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000002",
+            "tags": [
+                "domain::identity",
+                "service::keyvault",
+                "source::ms-learn",
+                "type::fact"
+            ]
+        },
+        {
+            "__type__": "Note",
+            "fields": [
+                "Why prefer a managed identity over a service principal with a client secret?",
+                "There is no credential to store, rotate or leak — Azure owns the lifecycle. A leaked client secret is valid until someone notices."
+            ],
+            "guid": "vw7n(H<1#l",
+            "note_model_uuid": "a1b2c3d4-0000-4000-8000-000000000001",
+            "tags": [
+                "domain::identity",
+                "service::entra",
+                "source::lab",
+                "type::why"
+            ]
+        }
+    ],
+    "reviewLimit": null,
+    "reviewLimitToday": null
+}

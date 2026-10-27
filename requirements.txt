@@ -1,0 +1,5 @@
+# Building .apkg files
+genanki==0.13.1
+
+# Reading decks.toml on Python 3.8-3.10; 3.11+ has tomllib in the stdlib
+tomli==2.2.1; python_version < "3.11"

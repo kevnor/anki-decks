@@ -1,0 +1,71 @@
+# The deck registry.
+#
+# Every deck in this repo is listed here. Adding a deck means adding a [[decks]]
+# block and a CrowdAnki export under its `path` — `python tools/new_deck.py` does
+# both for you.
+#
+# The tooling reads this file. If a deck is not listed, it is not linted, not
+# built, and not shipped.
+
+[defaults]
+# Tag namespaces every note must carry.
+required_tags = ["domain", "type"]
+
+# Namespaces with no fixed vocabulary. New Microsoft products appear faster than
+# we can maintain a list, so `service::` stays open.
+open_tags = ["service"]
+
+# Card-shape thresholds. These encode "one fact per card" as far as a machine can.
+min_front_chars = 15
+warn_back_chars = 260
+max_back_chars = 400
+max_cloze_deletions = 5
+
+# A deck of pure recall cards does not transfer to a scenario exam.
+scenario_types = ["scenario", "discriminator"]
+min_scenario_share = 0.25
+
+# Warn once a deck outgrows a sustainable daily review load.
+max_notes = 500
+
+[defaults.tag_values]
+# Allowed values per namespace, shared by every deck. A deck can add its own
+# namespaces or override any of these in its [decks.tag_values] block.
+type = ["fact", "discriminator", "scenario", "why"]
+source = ["ms-learn", "lab", "exam-topic", "docs"]
+status = ["review-needed"]
+
+
+[[decks]]
+id = "SC-500"
+title = "Implementing End-to-End Security Controls for Cloud and AI Workloads"
+path = "deck/SC-500"
+maintainer = "Kevin Nordnes"
+reference = "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/sc-500"
+notes = "Cloud and AI Security Engineer Associate. Passing score 700."
+
+[decks.tag_values]
+# The four SC-500 skill areas, from the official study guide.
+domain = ["identity", "storage-db-network", "compute", "posture"]
+
+
+# ---------------------------------------------------------------------------
+# Adding a deck: run `python tools/new_deck.py <ID> --domain ... --domain ...`
+# and it appends a block like this one, plus an empty CrowdAnki export.
+#
+# [[decks]]
+# id = "AZ-104"
+# title = "Microsoft Azure Administrator"
+# path = "deck/AZ-104"
+# maintainer = "Kevin Nordnes"
+# reference = "https://learn.microsoft.com/.../study-guides/az-104"
+#
+# [decks.tag_values]
+# domain = ["identity-governance", "storage", "compute", "networking", "monitor-backup"]
+#
+# Any [defaults] key can be overridden per deck, for example a topic deck that
+# is not exam-shaped and should not be nagged about scenario cards:
+#
+# min_scenario_share = 0.0
+# ---------------------------------------------------------------------------
+

@@ -1,0 +1,74 @@
+name: decks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  registry:
+    name: Read the registry
+    runs-on: ubuntu-latest
+    outputs:
+      decks: ${{ steps.list.outputs.decks }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: List decks
+        id: list
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json, sys
+          sys.path.insert(0, "tools")
+          from deckrepo import load_registry
+          print("decks=" + json.dumps([s.id for s in load_registry()]))
+          PY
+
+      - name: Show what will be checked
+        run: python tools/list_decks.py
+
+  check:
+    name: ${{ matrix.deck }}
+    needs: registry
+    runs-on: ubuntu-latest
+    strategy:
+      # One broken deck should not hide the state of the others.
+      fail-fast: false
+      matrix:
+        deck: ${{ fromJSON(needs.registry.outputs.decks) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Check the export is formatted as CrowdAnki writes it
+        # CrowdAnki writes sort_keys=True, indent=4. Keeping that means diffs
+        # show real card changes instead of reordered keys.
+        run: python tools/format_deck.py --check --deck "${{ matrix.deck }}"
+
+      - name: Lint cards
+        run: python tools/lint_cards.py --deck "${{ matrix.deck }}"
+
+      - name: Build
+        run: python tools/build_apkg.py --deck "${{ matrix.deck }}" -o dist
+
+      - name: Upload the deck
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.deck }}-apkg
+          path: dist/${{ matrix.deck }}.apkg
+          if-no-files-found: error
+          retention-days: 90
